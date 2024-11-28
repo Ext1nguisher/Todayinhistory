@@ -4,15 +4,29 @@
 
 ## 使用方法
 
+On Windows
+
+```powershell
+python -m pip install requests
+```
+
+On Linux/OSX(macOS)
+
+```bash
+python3 -m pip install requests
+```
+
+使用代码
+
 ```python
 import Todayinhistory
 
-Todayinhistory.Todayinhistory()
+content = Todayinhistory.Todayinhistory()
 ```
 
-将会返回一个包含字典的列表
+将会返回一个包含多个字典的列表
 
-json 格式：
+json 字典格式：
 ```json
 {
         "year": "1602",
