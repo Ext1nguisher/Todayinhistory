@@ -12,7 +12,7 @@ Todayinhistory.Todayinhistory()
 
 将会返回一个包含字典的列表
 
-格式：
+json 格式：
 ```json
 {
         "year": "1602",
