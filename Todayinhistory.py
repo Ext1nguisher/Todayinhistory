@@ -2,6 +2,8 @@ import json
 import requests
 from datetime import datetime
 
+http_ok = range(200,300)
+
 def Todayinhistory():
 
 
@@ -17,7 +19,7 @@ def Todayinhistory():
     else:
         day = timenow.day
 
-    url = f"https://baike.baidu.com/cms/home/eventsOnHistory/{month}.json?"
+    url = f"https://baike.baidu.com/cms/home/eventsOnHistory/{month}.json"
 
     headers = {
         "host": "baike.baidu.com",
@@ -31,6 +33,10 @@ def Todayinhistory():
 
     response = requests.get(url=url,headers=headers)
 
+    if not response.status_code in http_ok:
+        raise KeyError(f"远程服务器返回错误:{response.status_code}")
+
     meta = json.loads(response.content.decode("utf-8"))
 
     return meta[f"{month}"][f"{month}{day}"]
+
