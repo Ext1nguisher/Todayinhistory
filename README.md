@@ -19,10 +19,15 @@ python3 -m pip install requests
 使用代码
 
 ```python
-import Todayinhistory
+import main
 
-content = Todayinhistory.Todayinhistory()
+
+content = main.today_in_history()
+
+# 可指定 lang 参数，例如英语
+content = main.today_in_history(lang="en-US")
 ```
+参考 [MDN - Accept-Language](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept-Language)
 
 将会返回一个包含多个字典的列表
 
